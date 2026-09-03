@@ -1,6 +1,8 @@
 import random
 import time
 import player
+import events
+
 
 enemy_health = {
     "Lesser Goblin": 50,
@@ -121,6 +123,7 @@ def do_combat():
     # 5. COMBAT RESOLUTION
     if player.player_data["hp"] <= 0:
         print("\nYou have been defeated!")
+        end_combat(False)
     elif current_enemy_health <= 0:
         xp_gained = enemy_xp[current_enemy]
         player.player_data["xp"] += xp_gained
@@ -128,3 +131,40 @@ def do_combat():
         print(f"You gained {xp_gained} XP!")
         player.check_level_up()
         current_enemy = None
+        end_combat(True)
+
+
+
+def end_combat(has_won):
+    player.player_data["hp"] += (player.player_data["max_hp"] / 2) 
+    if has_won == True:
+
+        option_1 = events.Talk_Events[events.current_location_choices[0]]
+        option_2 = events.Talk_Events[events.current_location_choices[1]]
+        option_3 = events.Talk_Events[events.current_location_choices[2]]
+
+        next_loaction_number = int(input(f'your choices 1{option_1}: 2:{option_2} 3:{option_3}  '))
+
+        next_location = 0;
+
+        if next_loaction_number == 1:
+            
+        elif next_loaction_number == 2:
+        
+        elif next_loaction_number == 3:
+            
+
+        events.current_location = next_location
+
+        events.current_location_choices.pop[next_location]
+
+    elif has_won == False:
+        print("you are now dead")
+
+
+def shuffle_locations():
+
+
+    
+
+

@@ -2,6 +2,7 @@ import sys
 import player
 import enemy
 import startup_choices
+import events
 
 def start_menu():
     while True:
