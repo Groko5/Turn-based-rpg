@@ -1,6 +1,8 @@
 #where all event chances are stored
 
 Talk_Events = { 
+
+    "0": "rest",
     "1": "wizard tower", 
     "2": "forest",
     "3": "Holy Church",
@@ -15,4 +17,7 @@ current_Location = 0;
 
 current_location_choices = [1,2,3]
 
+event_range_min = 1
+
+event_range_max = 7
 

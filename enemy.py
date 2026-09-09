@@ -143,26 +143,43 @@ def end_combat(has_won):
         option_2 = events.Talk_Events[events.current_location_choices[1]]
         option_3 = events.Talk_Events[events.current_location_choices[2]]
 
-        next_loaction_number = int(input(f'your choices 1{option_1}: 2:{option_2} 3:{option_3}  '))
+        next_loaction_number = int(input(f'your choices 1{option_1}: 2:{option_2} 3:{option_3} 4: rest '))
+            
+        next_location = 0
 
-        next_location = 0;
+
 
         if next_loaction_number == 1:
+            next_location = events.current_location_choices[0]
             
+
         elif next_loaction_number == 2:
-        
+            next_location = events.current_location_choices[1]
+
+
         elif next_loaction_number == 3:
+            next_location = events.current_location_choices[2]
+
+        elif next_loaction_number == 4:
+            next_loaction = 0
+
+        if next_loaction_number != 0:
             
+
+            events.current_location_choices.pop[next_location]
+
+
+            events.current_location_choices.insert(next_loaction_number, random.randint(events.event_range_min,events.event_range_max))
+
 
         events.current_location = next_location
-
-        events.current_location_choices.pop[next_location]
+        
 
     elif has_won == False:
         print("you are now dead")
 
 
-def shuffle_locations():
+
 
 
     
